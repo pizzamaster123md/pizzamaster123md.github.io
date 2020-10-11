@@ -53,20 +53,43 @@
     .button {
         background-color:lightseagreen;
         border: none;
+        border-radius: 4px;
         color: white;
         padding: 15px 32px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
+        width: 200px;
         margin: 4px 2px;
         cursor: pointer;
+        transition: all 0.5s;
         font-size: 40px;
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         
     }   
-
-
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    .button:hover span {
+        padding-right: 25px;
+    }
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    
+    }
 </style>
 <body>
 <h1> Wild Water Wonders </h1>
@@ -76,15 +99,15 @@
 
     <!--this is a sub div, it is only the left half of the screen (since it's 50% of the width)-->
     <div>
-        <table style="width: 400px">
+        <table style="width: 300px">
             <tr>
-            <td><a  href="./problems.html" class="button">Problems</a></td> 
+            <td><a  href="./problems.html" class="button" style="vertical-align:middle"><span>Problems</span></a></td> 
             </tr>
             <tr>
-            <td><a href="./solutions.html" class="button">Solutions</a></td>
+            <td><a href="./solutions.html" class="button" style="vertical-align:middle"><span>Solutions</span></a></td>
             </tr>
             <tr>
-            <td><a href="./resources.html" class="button">Resources</a></td>
+            <td><a href="./resources.html" class="button" style="vertical-align:middle"><span>Resources</span></a></td>
             </tr>
         </table>
     </div>
